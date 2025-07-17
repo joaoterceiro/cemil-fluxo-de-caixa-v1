@@ -194,15 +194,15 @@ export function NotificationsModule() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center">
             <Bell className="h-8 w-8 mr-3 text-blue-600" />
             Central de Notificações
           </h2>
           <p className="text-gray-500">Gestão completa de alertas e comunicações</p>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 mt-3 md:mt-0">
           <Button variant="outline">
             <Settings className="h-4 w-4 mr-2" />
             Configurações
@@ -226,7 +226,7 @@ export function NotificationsModule() {
       </div>
 
       {/* Estatísticas */}
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Enviadas</CardTitle>
@@ -295,7 +295,7 @@ export function NotificationsModule() {
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-2">
           <TabsTrigger value="recentes">Recentes</TabsTrigger>
           <TabsTrigger value="configuracoes">Configurações</TabsTrigger>
           <TabsTrigger value="templates">Templates</TabsTrigger>
@@ -311,12 +311,15 @@ export function NotificationsModule() {
             <CardContent>
               <div className="space-y-4">
                 {notificacoesRecentes.map((notificacao) => (
-                  <div key={notificacao.id} className="flex items-start space-x-4 p-4 border rounded-lg">
+                  <div
+                    key={notificacao.id}
+                    className="flex flex-col sm:flex-row items-start space-x-4 p-4 border rounded-lg"
+                  >
                     <div className={`p-2 rounded-full bg-gray-100 ${notificacao.cor}`}>
                       <notificacao.icone className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-start justify-between">
+                      <div className="flex flex-col sm:flex-row items-start justify-between">
                         <div>
                           <h3 className="font-semibold text-gray-900">{notificacao.titulo}</h3>
                           <p className="text-sm text-gray-600 mt-1">{notificacao.descricao}</p>
@@ -326,7 +329,7 @@ export function NotificationsModule() {
                             <span>Canal: {notificacao.canal}</span>
                           </div>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-2 mt-2 sm:mt-0">
                           <Badge
                             variant={
                               notificacao.prioridade === "Alta"
@@ -372,7 +375,7 @@ export function NotificationsModule() {
                             </div>
                             <Badge variant="outline">{notif.antecedencia}</Badge>
                           </div>
-                          <div className="grid grid-cols-3 gap-4">
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div className="flex items-center space-x-2">
                               <Switch checked={notif.email} />
                               <Mail className="h-4 w-4 text-gray-400" />
@@ -457,9 +460,9 @@ export function NotificationsModule() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex items-center space-x-2">
+                <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-2">
                   <Select>
-                    <SelectTrigger className="w-48">
+                    <SelectTrigger className="w-full md:w-48">
                       <SelectValue placeholder="Filtrar por tipo" />
                     </SelectTrigger>
                     <SelectContent>
@@ -470,7 +473,7 @@ export function NotificationsModule() {
                     </SelectContent>
                   </Select>
                   <Select>
-                    <SelectTrigger className="w-48">
+                    <SelectTrigger className="w-full md:w-48">
                       <SelectValue placeholder="Período" />
                     </SelectTrigger>
                     <SelectContent>
@@ -504,7 +507,7 @@ function NotificationForm() {
         <Input placeholder="Ex: Vencimento de imposto" />
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Tipo</Label>
           <Select>
@@ -540,7 +543,7 @@ function NotificationForm() {
 
       <div className="space-y-2">
         <Label>Canais de Envio</Label>
-        <div className="flex space-x-4">
+        <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
           <div className="flex items-center space-x-2">
             <Switch />
             <Mail className="h-4 w-4" />

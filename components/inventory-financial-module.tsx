@@ -179,9 +179,9 @@ export function InventoryFinancialModule() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center">
             <Package className="h-8 w-8 mr-3 text-blue-600" />
             Estoque Financeiro
           </h2>
@@ -189,7 +189,7 @@ export function InventoryFinancialModule() {
         </div>
         <Dialog>
           <DialogTrigger asChild>
-            <Button>
+            <Button className="mt-3 md:mt-0">
               <Plus className="h-4 w-4 mr-2" />
               Novo Produto
             </Button>
@@ -205,7 +205,7 @@ export function InventoryFinancialModule() {
       </div>
 
       {/* Indicadores Principais */}
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Valor Total</CardTitle>
@@ -274,7 +274,7 @@ export function InventoryFinancialModule() {
       </div>
 
       <Tabs defaultValue="estoque" className="space-y-4">
-        <TabsList className="grid w-full grid-cols-5">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           <TabsTrigger value="estoque">Estoque Atual</TabsTrigger>
           <TabsTrigger value="abc">Análise ABC</TabsTrigger>
           <TabsTrigger value="movimentacao">Movimentação</TabsTrigger>
@@ -375,7 +375,7 @@ export function InventoryFinancialModule() {
                         {classe.status}
                       </Badge>
                     </div>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
                         <p className="text-sm text-gray-600">Valor do Estoque</p>
                         <p className="font-semibold text-blue-600">{classe.valorEstoque}</p>
@@ -572,7 +572,7 @@ export function InventoryFinancialModule() {
 function ProductForm() {
   return (
     <div className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Nome do Produto</Label>
           <Input placeholder="Nome do produto" />
@@ -581,7 +581,7 @@ function ProductForm() {
           <Label>Categoria</Label>
           <Select>
             <SelectTrigger>
-              <SelectValue placeholder="Selecione a categoria" />
+              <SelectValue placeholder="Selecione o tipo" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="eletronicos">Eletrônicos</SelectItem>
@@ -593,7 +593,7 @@ function ProductForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="space-y-2">
           <Label>Quantidade Inicial</Label>
           <Input type="number" placeholder="0" />
@@ -608,7 +608,7 @@ function ProductForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Estoque Mínimo</Label>
           <Input type="number" placeholder="0" />

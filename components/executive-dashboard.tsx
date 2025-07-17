@@ -139,15 +139,15 @@ export function ExecutiveDashboard() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center">
             <Crown className="h-8 w-8 mr-3 text-yellow-600" />
             Dashboard Executivo
           </h2>
           <p className="text-gray-500">Visão estratégica e indicadores de alta gestão</p>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 mt-3 md:mt-0">
           <Badge variant="outline" className="text-green-600 border-green-600">
             <CheckCircle className="h-3 w-3 mr-1" />
             Dados Atualizados
@@ -202,7 +202,7 @@ export function ExecutiveDashboard() {
       </div>
 
       <Tabs defaultValue="alertas" className="space-y-4">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-3">
           <TabsTrigger value="alertas">Alertas Estratégicos</TabsTrigger>
           <TabsTrigger value="projecoes">Projeções</TabsTrigger>
           <TabsTrigger value="competitivo">Análise Competitiva</TabsTrigger>

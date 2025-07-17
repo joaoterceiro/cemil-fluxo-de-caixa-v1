@@ -97,14 +97,14 @@ export function TransactionModule() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Entradas e Saídas</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Entradas e Saídas</h2>
           <p className="text-gray-500">Controle completo de receitas e despesas</p>
         </div>
         <Dialog>
           <DialogTrigger asChild>
-            <Button>
+            <Button className="mt-3 md:mt-0">
               <Plus className="h-4 w-4 mr-2" />
               Nova Transação
             </Button>
@@ -120,7 +120,7 @@ export function TransactionModule() {
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-2">
           <TabsTrigger value="entradas" className="flex items-center">
             <ArrowUpRight className="h-4 w-4 mr-2 text-green-600" />
             Entradas
@@ -134,12 +134,12 @@ export function TransactionModule() {
         <TabsContent value="entradas" className="space-y-4">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
                 <div>
                   <CardTitle className="text-green-600">Receitas</CardTitle>
                   <CardDescription>Controle de entradas e recebimentos</CardDescription>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 mt-3 md:mt-0">
                   <div className="relative">
                     <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" />
                     <Input placeholder="Buscar..." className="pl-8 w-64" />
@@ -202,12 +202,12 @@ export function TransactionModule() {
         <TabsContent value="saidas" className="space-y-4">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
                 <div>
                   <CardTitle className="text-red-600">Despesas</CardTitle>
                   <CardDescription>Controle de saídas e pagamentos</CardDescription>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 mt-3 md:mt-0">
                   <div className="relative">
                     <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" />
                     <Input placeholder="Buscar..." className="pl-8 w-64" />
@@ -271,7 +271,7 @@ export function TransactionModule() {
 
 function TransactionForm() {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="space-y-2">
         <Label htmlFor="tipo">Tipo de Transação</Label>
         <Select>
@@ -340,12 +340,12 @@ function TransactionForm() {
         </Select>
       </div>
 
-      <div className="col-span-2 space-y-2">
+      <div className="col-span-1 md:col-span-2 space-y-2">
         <Label htmlFor="descricao">Descrição</Label>
         <Textarea placeholder="Descreva a transação..." />
       </div>
 
-      <div className="col-span-2 flex justify-end space-x-2">
+      <div className="col-span-1 md:col-span-2 flex justify-end space-x-2">
         <Button variant="outline">Cancelar</Button>
         <Button>Salvar Transação</Button>
       </div>

@@ -103,14 +103,14 @@ export function ReportsModule() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Relatórios e Análises</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Relatórios e Análises</h2>
           <p className="text-gray-500">Análises financeiras detalhadas e relatórios gerenciais</p>
         </div>
-        <div className="flex items-center space-x-2">
-          <Select>
-            <SelectTrigger className="w-48">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center space-x-2 mt-3 md:mt-0">
+          <Select className="mb-2 sm:mb-0">
+            <SelectTrigger className="w-full sm:w-48">
               <SelectValue placeholder="Período" />
             </SelectTrigger>
             <SelectContent>

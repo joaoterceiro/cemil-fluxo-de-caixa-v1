@@ -107,12 +107,12 @@ export function DashboardOverview() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Dashboard Financeiro</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Dashboard Financeiro</h2>
           <p className="text-gray-500">Visão geral do fluxo de caixa em tempo real</p>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 mt-3 md:mt-0">
           <Badge variant="outline">
             <Calendar className="h-3 w-3 mr-1" />
             Janeiro 2024

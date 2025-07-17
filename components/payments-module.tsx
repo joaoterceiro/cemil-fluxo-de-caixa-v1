@@ -97,14 +97,14 @@ export function PaymentsModule() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Controle de Pagamentos</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Controle de Pagamentos</h2>
           <p className="text-gray-500">Agenda de pagamentos e aprovações</p>
         </div>
         <Dialog>
           <DialogTrigger asChild>
-            <Button>
+            <Button className="mt-3 md:mt-0">
               <Plus className="h-4 w-4 mr-2" />
               Agendar Pagamento
             </Button>
@@ -120,7 +120,7 @@ export function PaymentsModule() {
       </div>
 
       {/* Resumo de Pagamentos */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Pendentes</CardTitle>
@@ -300,7 +300,7 @@ export function PaymentsModule() {
 
 function PaymentForm() {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="space-y-2">
         <Label htmlFor="descricao">Descrição</Label>
         <Input placeholder="Descrição do pagamento" />
@@ -359,12 +359,12 @@ function PaymentForm() {
         </Select>
       </div>
 
-      <div className="col-span-2 space-y-2">
+      <div className="col-span-1 md:col-span-2 space-y-2">
         <Label htmlFor="observacoes">Observações</Label>
         <Textarea placeholder="Observações adicionais..." />
       </div>
 
-      <div className="col-span-2 flex justify-end space-x-2">
+      <div className="col-span-1 md:col-span-2 flex justify-end space-x-2">
         <Button variant="outline">Cancelar</Button>
         <Button>Agendar Pagamento</Button>
       </div>

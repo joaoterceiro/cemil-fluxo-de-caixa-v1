@@ -170,15 +170,15 @@ export function TaxModule() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center">
             <FileText className="h-8 w-8 mr-3 text-red-600" />
             Gestão Tributária
           </h2>
           <p className="text-gray-500">Controle completo de impostos e obrigações fiscais</p>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 mt-3 md:mt-0">
           <Button variant="outline">
             <Calculator className="h-4 w-4 mr-2" />
             Calcular Impostos
@@ -202,7 +202,7 @@ export function TaxModule() {
       </div>
 
       {/* Resumo Tributário */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Impostos/Mês</CardTitle>
@@ -308,7 +308,7 @@ export function TaxModule() {
       </Card>
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-4">
           <TabsTrigger value="obrigacoes">Obrigações</TabsTrigger>
           <TabsTrigger value="planejamento">Planejamento</TabsTrigger>
           <TabsTrigger value="historico">Histórico</TabsTrigger>
@@ -410,7 +410,7 @@ export function TaxModule() {
                       </div>
                       <Badge variant={regime.status === "Atual" ? "default" : "outline"}>{regime.status}</Badge>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <p className="text-sm text-gray-600">Imposto/Mês</p>
                         <p className="font-semibold text-red-600">{regime.impostoMes}</p>
@@ -542,7 +542,7 @@ function TaxForm() {
         <Input placeholder="Ex: DAS, IRPJ, CSLL..." />
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Tipo</Label>
           <Select>
@@ -562,7 +562,7 @@ function TaxForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Valor</Label>
           <Input placeholder="R$ 0,00" />

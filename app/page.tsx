@@ -42,8 +42,8 @@ export default function CashFlowSystem() {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white border-b border-gray-200 px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between">
+          <div className="flex items-center space-x-4 mb-2 sm:mb-0">
             <Building2 className="h-8 w-8 text-blue-600" />
             <div>
               <h1 className="text-2xl font-bold text-gray-900">FluxoCaixa Pro</h1>
@@ -63,7 +63,7 @@ export default function CashFlowSystem() {
       </header>
 
       <div className="flex">
-        <nav className="w-64 bg-white border-r border-gray-200 min-h-screen p-4">
+        <nav className="w-full sm:w-64 bg-white border-r border-gray-200 min-h-screen p-4">
           <div className="space-y-2">
             <Button
               variant={activeTab === "dashboard" ? "default" : "ghost"}
