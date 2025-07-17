@@ -16,16 +16,14 @@ RUN pnpm install --frozen-lockfile
 # Copia o resto dos arquivos da aplicação
 COPY . .
 
-# Build da aplicação Next.js
-RUN pnpm run build
-
 # Cria um usuário não-root para segurança
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
-# Cria diretório .next e ajusta permissões
-RUN mkdir .next
-RUN chown -R nextjs:nodejs .next
+# Build da aplicação Next.js
+RUN pnpm run build
+
+# Ajusta permissões dos arquivos (incluindo .next criado pelo build)
 RUN chown -R nextjs:nodejs /app
 
 # Muda para o usuário não-root
